@@ -1,0 +1,338 @@
+root@alenmombs:~# /ericsson/ombss/bin/last_successful_backup.bsh -p ENIQ_STATS_MULTIBLADE_CORDINATOR_DATA_aleniq1bk -n 7
+
+===============================================================================================================================
+START_TIME               END_TIME                 CLIENT_NAME                   STATUS         BACKUP_TYPEPOLICY_NAME                             
+===============================================================================================================================
+2020-09-05 03:30:00      2020-09-05 06:21:37      aleniq1bk                     success        FULL      ENIQ_STATS_MULTIBLADE_CORDINATOR_DATA_aleniq1bk              
+2020-09-12 03:30:00      2020-09-12 06:22:38      aleniq1bk                     success        FULL      ENIQ_STATS_MULTIBLADE_CORDINATOR_DATA_aleniq1bk              
+2020-10-03 03:30:00      2020-10-03 06:27:30      aleniq1bk                     success        FULL      ENIQ_STATS_MULTIBLADE_CORDINATOR_DATA_aleniq1bk              
+2020-10-10 03:30:00      2020-10-10 06:45:37      aleniq1bk                     success        FULL      ENIQ_STATS_MULTIBLADE_CORDINATOR_DATA_aleniq1bk              
+2020-10-17 03:30:00      2020-10-17 06:53:47      aleniq1bk                     success        FULL      ENIQ_STATS_MULTIBLADE_CORDINATOR_DATA_aleniq1bk              
+2020-10-24 03:30:00      2020-10-24 05:28:16      aleniq1bk                     success        FULL      ENIQ_STATS_MULTIBLADE_CORDINATOR_DATA_aleniq1bk              
+2020-10-31 03:30:00      2020-10-31 05:21:30      aleniq1bk                     success        FULL      ENIQ_STATS_MULTIBLADE_CORDINATOR_DATA_aleniq1bk              
+ 
+root@alenmombs:~# /ericsson/ombss/bin/last_successful_backup.bsh -p ENIQ_STATS_MULTIBLADE_DATA_aleniq1enbk -n 7
+
+===============================================================================================================================
+START_TIME               END_TIME                 CLIENT_NAME                   STATUS         BACKUP_TYPEPOLICY_NAME                             
+===============================================================================================================================
+2020-10-22 03:00:00      2020-10-22 03:08:41      aleniq1enbk                   success        FULL      ENIQ_STATS_MULTIBLADE_DATA_aleniq1enbk                       
+2020-10-24 03:00:00      2020-10-24 03:07:35      aleniq1enbk                   success        FULL      ENIQ_STATS_MULTIBLADE_DATA_aleniq1enbk                       
+2020-10-27 03:00:00      2020-10-27 03:09:22      aleniq1enbk                   success        FULL      ENIQ_STATS_MULTIBLADE_DATA_aleniq1enbk                       
+2020-10-29 03:00:00      2020-10-29 03:08:40      aleniq1enbk                   success        FULL      ENIQ_STATS_MULTIBLADE_DATA_aleniq1enbk                       
+2020-10-31 03:00:00      2020-10-31 03:09:27      aleniq1enbk                   success        FULL      ENIQ_STATS_MULTIBLADE_DATA_aleniq1enbk                       
+2020-11-03 03:00:00      2020-11-03 03:09:25      aleniq1enbk                   success        FULL      ENIQ_STATS_MULTIBLADE_DATA_aleniq1enbk                       
+2020-11-05 03:00:00      2020-11-05 03:08:51      aleniq1enbk                   success        FULL      ENIQ_STATS_MULTIBLADE_DATA_aleniq1enbk                       
+ 
+root@alenmombs:~# /ericsson/ombss/bin/last_successful_backup.bsh -p ENIQ_STATS_MULTIBLADE_DATA_aleniq1rdbk -n 7
+
+===============================================================================================================================
+START_TIME               END_TIME                 CLIENT_NAME                   STATUS         BACKUP_TYPEPOLICY_NAME                             
+===============================================================================================================================
+2020-10-22 03:00:02      2020-10-22 03:13:43      aleniq1rdbk                   success        FULL      ENIQ_STATS_MULTIBLADE_DATA_aleniq1rdbk                       
+2020-10-24 03:00:02      2020-10-24 03:13:51      aleniq1rdbk                   success        FULL      ENIQ_STATS_MULTIBLADE_DATA_aleniq1rdbk                       
+2020-10-27 03:00:02      2020-10-27 03:14:00      aleniq1rdbk                   success        FULL      ENIQ_STATS_MULTIBLADE_DATA_aleniq1rdbk                       
+2020-10-29 03:00:02      2020-10-29 03:13:33      aleniq1rdbk                   success        FULL      ENIQ_STATS_MULTIBLADE_DATA_aleniq1rdbk                       
+2020-10-31 03:00:02      2020-10-31 03:14:00      aleniq1rdbk                   success        FULL      ENIQ_STATS_MULTIBLADE_DATA_aleniq1rdbk                       
+2020-11-03 03:00:02      2020-11-03 03:14:40      aleniq1rdbk                   success        FULL      ENIQ_STATS_MULTIBLADE_DATA_aleniq1rdbk                       
+2020-11-05 03:00:02      2020-11-05 03:14:24      aleniq1rdbk                   success        FULL      ENIQ_STATS_MULTIBLADE_DATA_aleniq1rdbk                       
+ 
+root@alenmombs:~# /ericsson/ombss/bin/last_successful_backup.bsh -p ENIQ_STATS_MULTIBLADE_DATA_aleniq1wrbk -n 7
+
+===============================================================================================================================
+START_TIME               END_TIME                 CLIENT_NAME                   STATUS         BACKUP_TYPEPOLICY_NAME                             
+===============================================================================================================================
+2020-10-22 03:12:51      2020-10-22 03:21:35      aleniq1wrbk                   success        FULL      ENIQ_STATS_MULTIBLADE_DATA_aleniq1wrbk                       
+2020-10-24 03:12:15      2020-10-24 03:21:37      aleniq1wrbk                   success        FULL      ENIQ_STATS_MULTIBLADE_DATA_aleniq1wrbk                       
+2020-10-27 03:13:03      2020-10-27 03:22:06      aleniq1wrbk                   success        FULL      ENIQ_STATS_MULTIBLADE_DATA_aleniq1wrbk                       
+2020-10-29 03:12:56      2020-10-29 03:21:19      aleniq1wrbk                   success        FULL      ENIQ_STATS_MULTIBLADE_DATA_aleniq1wrbk                       
+2020-10-31 03:13:59      2020-10-31 03:22:39      aleniq1wrbk                   success        FULL      ENIQ_STATS_MULTIBLADE_DATA_aleniq1wrbk                       
+2020-11-03 03:13:35      2020-11-03 03:22:23      aleniq1wrbk                   success        FULL      ENIQ_STATS_MULTIBLADE_DATA_aleniq1wrbk                       
+2020-11-05 03:13:16      2020-11-05 03:22:41      aleniq1wrbk                   success        FULL      ENIQ_STATS_MULTIBLADE_DATA_aleniq1wrbk                       
+ 
+root@alenmombs:~# /ericsson/ombss/bin/last_successful_backup.bsh -p ENIQ_STATS_ONBLADE_RAW_aleniq1bk -n 7
+
+===============================================================================================================================
+START_TIME               END_TIME                 CLIENT_NAME                   STATUS         BACKUP_TYPEPOLICY_NAME                             
+===============================================================================================================================
+2020-09-05 06:21:39      2020-09-06 23:38:41      alenmombs                     success        FULL      ENIQ_STATS_ONBLADE_RAW_aleniq1bk                             
+2020-09-12 06:22:40      2020-09-13 22:09:40      alenmombs                     success        FULL      ENIQ_STATS_ONBLADE_RAW_aleniq1bk                             
+2020-10-03 06:27:32      2020-10-05 00:21:53      alenmombs                     success        FULL      ENIQ_STATS_ONBLADE_RAW_aleniq1bk                             
+2020-10-10 06:45:38      2020-10-11 21:22:46      alenmombs                     success        FULL      ENIQ_STATS_ONBLADE_RAW_aleniq1bk                             
+2020-10-17 06:53:49      2020-10-19 00:20:27      alenmombs                     success        FULL      ENIQ_STATS_ONBLADE_RAW_aleniq1bk                             
+2020-10-24 05:28:17      2020-10-26 00:16:18      alenmombs                     success        FULL      ENIQ_STATS_ONBLADE_RAW_aleniq1bk                             
+2020-10-31 05:21:32      2020-11-02 00:58:41      alenmombs                     success        FULL      ENIQ_STATS_ONBLADE_RAW_aleniq1bk                             
+ 
+root@alenmombs:~# /ericsson/ombss/bin/last_successful_backup.bsh -p ENIQ_STATS_ROOT_aleniq1bk -n 7
+
+===============================================================================================================================
+START_TIME               END_TIME                 CLIENT_NAME                   STATUS         BACKUP_TYPEPOLICY_NAME                             
+===============================================================================================================================
+2020-10-22 02:20:00      2020-10-22 02:43:48      aleniq1bk                     success        FULL      ENIQ_STATS_ROOT_aleniq1bk                                    
+2020-10-24 02:20:00      2020-10-24 02:50:59      aleniq1bk                     success        FULL      ENIQ_STATS_ROOT_aleniq1bk                                    
+2020-10-27 02:20:00      2020-10-27 02:44:00      aleniq1bk                     success        FULL      ENIQ_STATS_ROOT_aleniq1bk                                    
+2020-10-29 02:20:00      2020-10-29 02:44:43      aleniq1bk                     success        FULL      ENIQ_STATS_ROOT_aleniq1bk                                    
+2020-10-31 02:20:00      2020-10-31 02:50:16      aleniq1bk                     success        FULL      ENIQ_STATS_ROOT_aleniq1bk                                    
+2020-11-03 02:20:00      2020-11-03 02:50:27      aleniq1bk                     success        FULL      ENIQ_STATS_ROOT_aleniq1bk                                    
+2020-11-05 02:20:00      2020-11-05 02:45:49      aleniq1bk                     success        FULL      ENIQ_STATS_ROOT_aleniq1bk                                    
+ 
+root@alenmombs:~# /ericsson/ombss/bin/last_successful_backup.bsh -p ENIQ_STATS_ROOT_aleniq1enbk -n 7
+
+===============================================================================================================================
+START_TIME               END_TIME                 CLIENT_NAME                   STATUS         BACKUP_TYPEPOLICY_NAME                             
+===============================================================================================================================
+2020-10-22 01:50:00      2020-10-22 02:05:30      aleniq1enbk                   success        FULL      ENIQ_STATS_ROOT_aleniq1enbk                                  
+2020-10-24 01:50:00      2020-10-24 02:07:20      aleniq1enbk                   success        FULL      ENIQ_STATS_ROOT_aleniq1enbk                                  
+2020-10-27 01:50:00      2020-10-27 02:05:11      aleniq1enbk                   success        FULL      ENIQ_STATS_ROOT_aleniq1enbk                                  
+2020-10-29 01:50:00      2020-10-29 02:06:04      aleniq1enbk                   success        FULL      ENIQ_STATS_ROOT_aleniq1enbk                                  
+2020-10-31 01:50:00      2020-10-31 02:06:13      aleniq1enbk                   success        FULL      ENIQ_STATS_ROOT_aleniq1enbk                                  
+2020-11-03 01:50:00      2020-11-03 02:06:14      aleniq1enbk                   success        FULL      ENIQ_STATS_ROOT_aleniq1enbk                                  
+2020-11-05 01:50:00      2020-11-05 02:06:04      aleniq1enbk                   success        FULL      ENIQ_STATS_ROOT_aleniq1enbk                                  
+ 
+root@alenmombs:~# /ericsson/ombss/bin/last_successful_backup.bsh -p ENIQ_STATS_ROOT_aleniq1rdbk -n 7
+
+===============================================================================================================================
+START_TIME               END_TIME                 CLIENT_NAME                   STATUS         BACKUP_TYPEPOLICY_NAME                             
+===============================================================================================================================
+2020-10-22 01:25:00      2020-10-22 01:39:00      aleniq1rdbk                   success        FULL      ENIQ_STATS_ROOT_aleniq1rdbk                                  
+2020-10-24 01:25:00      2020-10-24 01:41:39      aleniq1rdbk                   success        FULL      ENIQ_STATS_ROOT_aleniq1rdbk                                  
+2020-10-27 01:25:00      2020-10-27 01:40:07      aleniq1rdbk                   success        FULL      ENIQ_STATS_ROOT_aleniq1rdbk                                  
+2020-10-29 01:25:00      2020-10-29 01:41:38      aleniq1rdbk                   success        FULL      ENIQ_STATS_ROOT_aleniq1rdbk                                  
+2020-10-31 01:25:00      2020-10-31 01:39:07      aleniq1rdbk                   success        FULL      ENIQ_STATS_ROOT_aleniq1rdbk                                  
+2020-11-03 01:25:00      2020-11-03 01:39:29      aleniq1rdbk                   success        FULL      ENIQ_STATS_ROOT_aleniq1rdbk                                  
+2020-11-05 01:25:00      2020-11-05 01:38:48      aleniq1rdbk                   success        FULL      ENIQ_STATS_ROOT_aleniq1rdbk                                  
+ 
+root@alenmombs:~# /ericsson/ombss/bin/last_successful_backup.bsh -p ENIQ_STATS_ROOT_aleniq1wrbk -n 7
+
+===============================================================================================================================
+START_TIME               END_TIME                 CLIENT_NAME                   STATUS         BACKUP_TYPEPOLICY_NAME                             
+===============================================================================================================================
+2020-10-22 01:00:00      2020-10-22 01:21:03      aleniq1wrbk                   success        FULL      ENIQ_STATS_ROOT_aleniq1wrbk                                  
+2020-10-24 01:00:00      2020-10-24 01:23:17      aleniq1wrbk                   success        FULL      ENIQ_STATS_ROOT_aleniq1wrbk                                  
+2020-10-27 01:00:00      2020-10-27 01:22:20      aleniq1wrbk                   success        FULL      ENIQ_STATS_ROOT_aleniq1wrbk                                  
+2020-10-29 01:00:00      2020-10-29 01:21:27      aleniq1wrbk                   success        FULL      ENIQ_STATS_ROOT_aleniq1wrbk                                  
+2020-10-31 01:00:00      2020-10-31 01:22:41      aleniq1wrbk                   success        FULL      ENIQ_STATS_ROOT_aleniq1wrbk                                  
+2020-11-03 01:00:00      2020-11-03 01:24:07      aleniq1wrbk                   success        FULL      ENIQ_STATS_ROOT_aleniq1wrbk                                  
+2020-11-05 01:00:00      2020-11-05 01:18:51      aleniq1wrbk                   success        FULL      ENIQ_STATS_ROOT_aleniq1wrbk                                  
+ 
+root@alenmombs:~# /ericsson/ombss/bin/last_successful_backup.bsh -p alenmombs_FILES -n 7
+
+===============================================================================================================================
+START_TIME               END_TIME                 CLIENT_NAME                   STATUS         BACKUP_TYPEPOLICY_NAME                             
+===============================================================================================================================
+2020-10-31 06:00:01      2020-10-31 06:01:12      alenmombs                     success        INCR      alenmombs_FILES                                              
+2020-11-01 06:00:01      2020-11-01 06:14:10      alenmombs                     success        FULL      alenmombs_FILES                                              
+2020-11-02 06:01:17      2020-11-02 06:02:05      alenmombs                     success        INCR      alenmombs_FILES                                              
+2020-11-03 06:00:01      2020-11-03 06:00:47      alenmombs                     success        INCR      alenmombs_FILES                                              
+2020-11-04 06:01:13      2020-11-04 06:01:56      alenmombs                     success        INCR      alenmombs_FILES                                              
+2020-11-05 06:00:01      2020-11-05 06:00:42      alenmombs                     success        INCR      alenmombs_FILES                                              
+2020-11-06 06:00:01      2020-11-06 06:00:41      alenmombs                     success        INCR      alenmombs_FILES                                              
+ 
+root@alenmombs:~# /ericsson/ombss/bin/last_successful_backup.bsh -p alenmombs_Hot_Catalog -n 7
+
+===============================================================================================================================
+START_TIME               END_TIME                 CLIENT_NAME                   STATUS         BACKUP_TYPEPOLICY_NAME                             
+===============================================================================================================================
+2020-10-30 16:00:00      2020-10-30 16:00:26      alenmombs                     success        INCR      alenmombs_Hot_Catalog                                        
+2020-10-31 16:00:00      2020-10-31 16:00:17      alenmombs                     success        INCR      alenmombs_Hot_Catalog                                        
+2020-11-01 16:00:00      2020-11-01 16:02:13      alenmombs                     success        FULL      alenmombs_Hot_Catalog                                        
+2020-11-02 16:00:00      2020-11-02 16:00:15      alenmombs                     success        INCR      alenmombs_Hot_Catalog                                        
+2020-11-03 16:00:00      2020-11-03 16:00:21      alenmombs                     success        INCR      alenmombs_Hot_Catalog                                        
+2020-11-04 16:00:00      2020-11-04 16:00:16      alenmombs                     success        INCR      alenmombs_Hot_Catalog                                        
+2020-11-05 16:00:00      2020-11-05 16:00:17      alenmombs                     success        INCR      alenmombs_Hot_Catalog                                        
+ 
+root@alenmombs:~# /ericsson/ombss/bin/last_successful_backup.bsh -p alomsas1bk_FILES -n 7
+
+===============================================================================================================================
+START_TIME               END_TIME                 CLIENT_NAME                   STATUS         BACKUP_TYPEPOLICY_NAME                             
+===============================================================================================================================
+2020-10-31 10:00:01      2020-10-31 10:02:03      alomsas1bk                    success        INCR      alomsas1bk_FILES                                             
+2020-11-01 10:00:01      2020-11-01 10:08:34      alomsas1bk                    success        FULL      alomsas1bk_FILES                                             
+2020-11-02 10:00:01      2020-11-02 10:02:00      alomsas1bk                    success        INCR      alomsas1bk_FILES                                             
+2020-11-03 10:01:10      2020-11-03 10:02:40      alomsas1bk                    success        INCR      alomsas1bk_FILES                                             
+2020-11-04 10:01:09      2020-11-04 10:03:07      alomsas1bk                    success        INCR      alomsas1bk_FILES                                             
+2020-11-05 10:00:01      2020-11-05 10:01:26      alomsas1bk                    success        INCR      alomsas1bk_FILES                                             
+2020-11-06 10:00:01      2020-11-06 10:02:00      alomsas1bk                    success        INCR      alomsas1bk_FILES                                             
+ 
+root@alenmombs:~# 
+
+
+
+
+
+////////////////// AST OMBS	/////////////////////////
+
+root@astombs1bl:~# /ericsson/ombss/bin/last_successful_backup.bsh -p OSS_i386_DATA_MD_syb1bkup -n 7
+
+===============================================================================================================================
+START_TIME               END_TIME                 CLIENT_NAME                   STATUS         BACKUP_TYPEPOLICY_NAME                             
+===============================================================================================================================
+2020-10-30 00:28:39      2020-10-30 01:07:05      syb1bkup                      success        INCR      OSS_i386_DATA_MD_syb1bkup                                    
+2020-10-31 00:27:41      2020-10-31 01:07:34      syb1bkup                      success        INCR      OSS_i386_DATA_MD_syb1bkup                                    
+2020-11-01 00:57:24      2020-11-01 01:51:51      syb1bkup                      success        FULL      OSS_i386_DATA_MD_syb1bkup                                    
+2020-11-02 00:20:40      2020-11-02 01:08:48      syb1bkup                      success        INCR      OSS_i386_DATA_MD_syb1bkup                                    
+2020-11-03 00:20:17      2020-11-03 01:09:30      syb1bkup                      success        INCR      OSS_i386_DATA_MD_syb1bkup                                    
+2020-11-05 00:00:03      2020-11-05 00:53:32      syb1bkup                      success        INCR      OSS_i386_DATA_MD_syb1bkup                                    
+2020-11-06 00:50:28      2020-11-06 01:32:10      syb1bkup                      success        INCR      OSS_i386_DATA_MD_syb1bkup                                    
+ 
+root@astombs1bl:~# /ericsson/ombss/bin/last_successful_backup.bsh -p OSS_i386_DATA_MS_ossbkup -n 7
+
+===============================================================================================================================
+START_TIME               END_TIME                 CLIENT_NAME                   STATUS         BACKUP_TYPEPOLICY_NAME                             
+===============================================================================================================================
+2020-10-29 00:27:29      2020-10-29 01:27:23      ossbkup                       success        INCR      OSS_i386_DATA_MS_ossbkup                                     
+2020-10-30 00:27:01      2020-10-30 01:28:32      ossbkup                       success        INCR      OSS_i386_DATA_MS_ossbkup                                     
+2020-10-31 00:26:38      2020-10-31 01:26:40      ossbkup                       success        INCR      OSS_i386_DATA_MS_ossbkup                                     
+2020-11-01 00:58:26      2020-11-01 04:08:50      ossbkup                       success        FULL      OSS_i386_DATA_MS_ossbkup                                     
+2020-11-02 00:21:17      2020-11-02 01:21:16      ossbkup                       success        INCR      OSS_i386_DATA_MS_ossbkup                                     
+2020-11-03 00:21:38      2020-11-03 01:23:33      ossbkup                       success        INCR      OSS_i386_DATA_MS_ossbkup                                     
+2020-11-05 00:00:01      2020-11-05 01:14:57      ossbkup                       success        INCR      OSS_i386_DATA_MS_ossbkup                                     
+ 
+root@astombs1bl:~# /ericsson/ombss/bin/last_successful_backup.bsh -p OSS_i386_ROOT_MD_syb1bkup -n 7
+
+===============================================================================================================================
+START_TIME               END_TIME                 CLIENT_NAME                   STATUS         BACKUP_TYPEPOLICY_NAME                             
+===============================================================================================================================
+2020-10-31 01:07:34      2020-10-31 01:11:17      syb1bkup                      success        INCR      OSS_i386_ROOT_MD_syb1bkup                                    
+2020-11-01 01:51:51      2020-11-01 02:01:59      syb1bkup                      success        FULL      OSS_i386_ROOT_MD_syb1bkup                                    
+2020-11-02 01:08:48      2020-11-02 01:12:25      syb1bkup                      success        INCR      OSS_i386_ROOT_MD_syb1bkup                                    
+2020-11-03 01:09:30      2020-11-03 01:13:10      syb1bkup                      success        INCR      OSS_i386_ROOT_MD_syb1bkup                                    
+2020-11-04 01:48:52      2020-11-04 01:55:18      syb1bkup                      success        INCR      OSS_i386_ROOT_MD_syb1bkup                                    
+2020-11-05 00:53:32      2020-11-05 00:57:09      syb1bkup                      success        INCR      OSS_i386_ROOT_MD_syb1bkup                                    
+2020-11-06 01:32:10      2020-11-06 01:35:36      syb1bkup                      success        INCR      OSS_i386_ROOT_MD_syb1bkup                                    
+ 
+root@astombs1bl:~# /ericsson/ombss/bin/last_successful_backup.bsh -p OSS_i386_ROOT_MS_ossbkup -n 7
+
+===============================================================================================================================
+START_TIME               END_TIME                 CLIENT_NAME                   STATUS         BACKUP_TYPEPOLICY_NAME                             
+===============================================================================================================================
+2020-10-31 01:26:40      2020-10-31 01:30:09      ossbkup                       success        INCR      OSS_i386_ROOT_MS_ossbkup                                     
+2020-11-01 04:08:50      2020-11-01 04:18:40      ossbkup                       success        FULL      OSS_i386_ROOT_MS_ossbkup                                     
+2020-11-02 01:21:16      2020-11-02 01:25:00      ossbkup                       success        INCR      OSS_i386_ROOT_MS_ossbkup                                     
+2020-11-03 01:23:33      2020-11-03 01:27:01      ossbkup                       success        INCR      OSS_i386_ROOT_MS_ossbkup                                     
+2020-11-04 00:34:12      2020-11-04 00:40:58      ossbkup                       success        INCR      OSS_i386_ROOT_MS_ossbkup                                     
+2020-11-05 01:14:58      2020-11-05 01:18:27      ossbkup                       success        INCR      OSS_i386_ROOT_MS_ossbkup                                     
+2020-11-06 01:27:04      2020-11-06 01:30:34      ossbkup                       success        INCR      OSS_i386_ROOT_MS_ossbkup                                     
+ 
+root@astombs1bl:~# /ericsson/ombss/bin/last_successful_backup.bsh -p astinf1bl-bk_FILES -n 7
+
+===============================================================================================================================
+START_TIME               END_TIME                 CLIENT_NAME                   STATUS         BACKUP_TYPEPOLICY_NAME                             
+===============================================================================================================================
+2020-11-01 00:00:01      2020-11-01 00:22:42      astinf1bl-bk                  success        FULL      astinf1bl-bk_FILES                                           
+2020-11-02 00:00:03      2020-11-02 00:08:36      astinf1bl-bk                  success        INCR      astinf1bl-bk_FILES                                           
+2020-11-03 00:00:03      2020-11-03 00:09:02      astinf1bl-bk                  success        INCR      astinf1bl-bk_FILES                                           
+2020-11-03 18:31:33      2020-11-03 18:50:47      astinf1bl-bk                  success        FULL      astinf1bl-bk_FILES                                           
+2020-11-04 00:00:03      2020-11-04 00:09:51      astinf1bl-bk                  success        INCR      astinf1bl-bk_FILES                                           
+2020-11-05 01:00:05      2020-11-05 01:10:38      astinf1bl-bk                  success        INCR      astinf1bl-bk_FILES                                           
+2020-11-06 00:00:03      2020-11-06 00:09:11      astinf1bl-bk                  success        INCR      astinf1bl-bk_FILES                                           
+ 
+root@astombs1bl:~# /ericsson/ombss/bin/last_successful_backup.bsh -p astinf2bl-bk_FILES -n 7
+
+===============================================================================================================================
+START_TIME               END_TIME                 CLIENT_NAME                   STATUS         BACKUP_TYPEPOLICY_NAME                             
+===============================================================================================================================
+2020-11-01 05:00:01      2020-11-01 05:11:17      astinf2bl-bk                  success        FULL      astinf2bl-bk_FILES                                           
+2020-11-02 05:00:01      2020-11-02 05:06:35      astinf2bl-bk                  success        INCR      astinf2bl-bk_FILES                                           
+2020-11-03 05:00:01      2020-11-03 05:06:27      astinf2bl-bk                  success        INCR      astinf2bl-bk_FILES                                           
+2020-11-03 18:39:48      2020-11-03 18:51:33      astinf2bl-bk                  success        FULL      astinf2bl-bk_FILES                                           
+2020-11-04 05:00:01      2020-11-04 05:07:21      astinf2bl-bk                  success        INCR      astinf2bl-bk_FILES                                           
+2020-11-05 05:00:01      2020-11-05 05:06:36      astinf2bl-bk                  success        INCR      astinf2bl-bk_FILES                                           
+2020-11-06 05:00:01      2020-11-06 05:06:23      astinf2bl-bk                  success        INCR      astinf2bl-bk_FILES                                           
+ 
+root@astombs1bl:~# /ericsson/ombss/bin/last_successful_backup.bsh -p astmws-bk_FILES -n 7
+
+===============================================================================================================================
+START_TIME               END_TIME                 CLIENT_NAME                   STATUS         BACKUP_TYPEPOLICY_NAME                             
+===============================================================================================================================
+2020-11-01 00:15:29      2020-11-01 00:47:51      astmws-bk                     success        FULL      astmws-bk_FILES                                              
+2020-11-02 00:08:12      2020-11-02 00:15:04      astmws-bk                     success        INCR      astmws-bk_FILES                                              
+2020-11-03 00:07:44      2020-11-03 00:15:07      astmws-bk                     success        INCR      astmws-bk_FILES                                              
+2020-11-03 18:50:47      2020-11-03 19:23:02      astmws-bk                     success        FULL      astmws-bk_FILES                                              
+2020-11-04 00:08:36      2020-11-04 00:15:53      astmws-bk                     success        INCR      astmws-bk_FILES                                              
+2020-11-05 01:10:38      2020-11-05 01:31:57      astmws-bk                     success        INCR      astmws-bk_FILES                                              
+2020-11-06 00:09:11      2020-11-06 00:22:31      astmws-bk                     success        INCR      astmws-bk_FILES                                              
+ 
+root@astombs1bl:~# /ericsson/ombss/bin/last_successful_backup.bsh -p astnedss_FILES -n 7
+
+===============================================================================================================================
+START_TIME               END_TIME                 CLIENT_NAME                   STATUS         BACKUP_TYPEPOLICY_NAME                             
+===============================================================================================================================
+2020-11-01 02:04:50      2020-11-01 02:20:14      astnedss                      success        FULL      astnedss_FILES                                               
+2020-11-02 01:15:11      2020-11-02 01:27:36      astnedss                      success        INCR      astnedss_FILES                                               
+2020-11-03 01:15:16      2020-11-03 01:27:37      astnedss                      success        INCR      astnedss_FILES                                               
+2020-11-03 19:29:58      2020-11-03 19:39:36      astnedss                      success        FULL      astnedss_FILES                                               
+2020-11-04 00:23:54      2020-11-04 00:32:18      astnedss                      success        INCR      astnedss_FILES                                               
+2020-11-05 01:36:28      2020-11-05 01:44:42      astnedss                      success        INCR      astnedss_FILES                                               
+2020-11-06 00:35:14      2020-11-06 00:47:51      astnedss                      success        INCR      astnedss_FILES                                               
+ 
+root@astombs1bl:~# /ericsson/ombss/bin/last_successful_backup.bsh -p astombs1bl_FILES -n 7
+
+===============================================================================================================================
+START_TIME               END_TIME                 CLIENT_NAME                   STATUS         BACKUP_TYPEPOLICY_NAME                             
+===============================================================================================================================
+2020-10-31 00:09:33      2020-10-31 00:12:50      astombs1bl                    success        INCR      astombs1bl_FILES                                             
+2020-11-01 00:00:03      2020-11-01 00:15:29      astombs1bl                    success        FULL      astombs1bl_FILES                                             
+2020-11-02 00:00:01      2020-11-02 00:05:05      astombs1bl                    success        INCR      astombs1bl_FILES                                             
+2020-11-03 00:00:01      2020-11-03 00:05:11      astombs1bl                    success        INCR      astombs1bl_FILES                                             
+2020-11-04 00:15:42      2020-11-04 00:17:48      astombs1bl                    success        INCR      astombs1bl_FILES                                             
+2020-11-05 01:25:45      2020-11-05 01:29:01      astombs1bl                    success        INCR      astombs1bl_FILES                                             
+2020-11-06 00:22:31      2020-11-06 00:25:43      astombs1bl                    success        INCR      astombs1bl_FILES                                             
+ 
+root@astombs1bl:~# /ericsson/ombss/bin/last_successful_backup.bsh -p astombs1bl_Hot_Catalog -n 7
+
+===============================================================================================================================
+START_TIME               END_TIME                 CLIENT_NAME                   STATUS         BACKUP_TYPEPOLICY_NAME                             
+===============================================================================================================================
+2020-10-30 16:00:00      2020-10-30 16:02:43      astombs1bl                    success        INCR      astombs1bl_Hot_Catalog                                       
+2020-10-31 16:00:00      2020-10-31 16:02:47      astombs1bl                    success        INCR      astombs1bl_Hot_Catalog                                       
+2020-11-01 16:00:00      2020-11-01 16:03:08      astombs1bl                    success        FULL      astombs1bl_Hot_Catalog                                       
+2020-11-02 16:00:00      2020-11-02 16:02:52      astombs1bl                    success        INCR      astombs1bl_Hot_Catalog                                       
+2020-11-03 16:00:00      2020-11-03 16:02:56      astombs1bl                    success        INCR      astombs1bl_Hot_Catalog                                       
+2020-11-04 16:00:00      2020-11-04 16:02:59      astombs1bl                    success        INCR      astombs1bl_Hot_Catalog                                       
+2020-11-05 16:00:00      2020-11-05 16:03:02      astombs1bl                    success        INCR      astombs1bl_Hot_Catalog                                       
+ 
+root@astombs1bl:~# /ericsson/ombss/bin/last_successful_backup.bsh -p astomsas_FILES -n 7
+
+===============================================================================================================================
+START_TIME               END_TIME                 CLIENT_NAME                   STATUS         BACKUP_TYPEPOLICY_NAME                             
+===============================================================================================================================
+2020-11-01 10:00:01      2020-11-01 10:11:18      astomsas                      success        FULL      astomsas_FILES                                               
+2020-11-02 10:00:01      2020-11-02 10:06:13      astomsas                      success        INCR      astomsas_FILES                                               
+2020-11-03 10:00:01      2020-11-03 10:06:37      astomsas                      success        INCR      astomsas_FILES                                               
+2020-11-03 19:20:22      2020-11-03 19:28:27      astomsas                      success        FULL      astomsas_FILES                                               
+2020-11-04 10:00:01      2020-11-04 10:07:00      astomsas                      success        INCR      astomsas_FILES                                               
+2020-11-05 10:00:01      2020-11-05 10:08:06      astomsas                      success        INCR      astomsas_FILES                                               
+2020-11-06 10:00:01      2020-11-06 10:06:35      astomsas                      success        INCR      astomsas_FILES                                               
+ 
+root@astombs1bl:~# /ericsson/ombss/bin/last_successful_backup.bsh -p astxts1bl-bk_FILES -n 7
+
+===============================================================================================================================
+START_TIME               END_TIME                 CLIENT_NAME                   STATUS         BACKUP_TYPEPOLICY_NAME                             
+===============================================================================================================================
+2020-11-01 00:47:50      2020-11-01 00:55:34      astxts1bl-bk                  success        FULL      astxts1bl-bk_FILES                                           
+2020-11-02 00:14:47      2020-11-02 00:18:19      astxts1bl-bk                  success        INCR      astxts1bl-bk_FILES                                           
+2020-11-03 00:14:50      2020-11-03 00:18:17      astxts1bl-bk                  success        INCR      astxts1bl-bk_FILES                                           
+2020-11-03 19:40:24      2020-11-03 19:49:43      astxts1bl-bk                  success        FULL      astxts1bl-bk_FILES                                           
+2020-11-04 00:17:37      2020-11-04 00:20:56      astxts1bl-bk                  success        INCR      astxts1bl-bk_FILES                                           
+2020-11-05 01:29:01      2020-11-05 01:34:06      astxts1bl-bk                  success        INCR      astxts1bl-bk_FILES                                           
+2020-11-06 00:25:43      2020-11-06 00:31:08      astxts1bl-bk                  success        INCR      astxts1bl-bk_FILES                                           
+ 
+root@astombs1bl:~# /ericsson/ombss/bin/last_successful_backup.bsh -p astxts2bl_FILES -n 7
+
+===============================================================================================================================
+START_TIME               END_TIME                 CLIENT_NAME                   STATUS         BACKUP_TYPEPOLICY_NAME                             
+===============================================================================================================================
+2020-11-01 00:47:52      2020-11-01 00:55:57      astxts2bl                     success        FULL      astxts2bl_FILES                                              
+2020-11-02 00:16:33      2020-11-02 00:18:50      astxts2bl                     success        INCR      astxts2bl_FILES                                              
+2020-11-03 00:16:36      2020-11-03 00:18:57      astxts2bl                     success        INCR      astxts2bl_FILES                                              
+2020-11-03 20:04:23      2020-11-03 20:11:20      astxts2bl                     success        FULL      astxts2bl_FILES                                              
+2020-11-04 00:19:37      2020-11-04 00:22:06      astxts2bl                     success        INCR      astxts2bl_FILES                                              
+2020-11-05 01:32:33      2020-11-05 01:34:54      astxts2bl                     success        INCR      astxts2bl_FILES                                              
+2020-11-06 00:31:08      2020-11-06 00:33:59      astxts2bl                     success        INCR      astxts2bl_FILES                                              
+ 
+root@astombs1bl:~# 
+
+
+
+

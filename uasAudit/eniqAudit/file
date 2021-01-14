@@ -1,0 +1,480 @@
+	/// ENIQ AUDIT SUMMARY INFORMATION ///
+
+eniq-coordinator:
+nok	CheckDisksSU - checks file system disk space usage
+ok	CheckBeadm - checks the lists all existing ZFS Boot Environments(BEs), should be only one with if there is no preparation for system upgrade
+ok	CheckSrvs - checks services states, all required services should be online
+nok	CheckSnapshots - checks all available snapshots, autocreated snapshots has "snss" in name
+ok	CheckZfsPoolStatus - checks the status of ZFS pool file systems
+ok	CheckZfsPoolSU - checks ZFS pool space usage
+ok	CheckZfsPoolErrors - checks if there are any error in ZFS pool
+
+eniq-engine:
+ok	CheckZfsPoolErrors - checks if there are any error in ZFS pool
+ok	CheckDisksSU - checks file system disk space usage
+nok	CheckBeadm - checks the lists all existing ZFS Boot Environments(BEs), should be only one with if there is no preparation for system upgrade
+ok	CheckSrvs - checks services states, all required services should be online
+ok	CheckETLC - check activities in ENIQ ETLC Monitoring
+ok	CheckZfsPoolStatus - checks the status of ZFS pool file systems
+ok	CheckZfsPoolSU - checks ZFS pool space usage
+
+eniq-reader:
+ok	CheckZfsPoolStatus - checks the status of ZFS pool file systems
+ok	CheckZfsPoolSU - checks ZFS pool space usage
+ok	CheckZfsPoolErrors - checks if there are any error in ZFS pool
+ok	CheckDisksSU - checks file system disk space usage
+ok	CheckBeadm - checks the lists all existing ZFS Boot Environments(BEs), should be only one with if there is no preparation for system upgrade
+ok	CheckSrvs - checks services states, all required services should be online
+
+eniq-writer:
+nok	CheckBeadm - checks the lists all existing ZFS Boot Environments(BEs), should be only one with if there is no preparation for system upgrade
+ok	CheckSrvs - checks services states, all required services should be online
+ok	CheckZfsPoolStatus - checks the status of ZFS pool file systems
+ok	CheckZfsPoolSU - checks ZFS pool space usage
+ok	CheckZfsPoolErrors - checks if there are any error in ZFS pool
+ok	CheckDisksSU - checks file system disk space usage
+
+
+	/// ENIQ AUDIT DETAILED INFORMATION ///
+
+ENIQ Audit Stated:
+
+-> eniq-coordinator
+
+->> df -h | awk '{print $5$1}'
+	ok	34%	rpool/ROOT/d70
+	ok	0%	/devices
+	ok	0%	/dev
+	ok	0%	ctfs
+	ok	0%	proc
+	ok	0%	mnttab
+	ok	1%	swap
+	ok	0%	objfs
+	ok	0%	sharefs
+	ok	34%	/usr/lib/libc/libc_hwcap1.so.1
+	ok	0%	fd
+	ok	19%	rpool/ROOT/d70/var
+	ok	1%	swap
+	ok	1%	rpool/VARSHARE
+	ok	3%	eniq_sp_1/bkup_sw
+	ok	1%	eniq_sp_1/connectd
+	ok	38%	stats_coordinator_pool/dwh_main
+	ok	1%	stats_coordinator_pool/dwh_main_dbspace
+	ok	1%	stats_coordinator_pool/dwh_reader
+	ok	11%	stats_coordinator_pool/dwh_temp_dbspace
+	ok	12%	stats_coordinator_pool/rep_main
+	ok	1%	stats_coordinator_pool/rep_temp
+	ok	1%	eniq_sp_1/installation
+	ok	9%	eniq_sp_1/local_logs
+	ok	1%	stats_coordinator_pool/mgdb
+	ok	1%	stats_coordinator_pool/misc
+	ok	1%	stats_coordinator_pool/opengeo_data
+	ok	1%	eniq_sp_1/smf
+	ok	1%	eniq_sp_1
+	ok	1%	stats_coordinator_pool
+	ok	1%	rpool
+	ok	1%	rpool/VARSHARE/zones
+	ok	1%	rpool/VARSHARE/pkg
+	ok	1%	rpool/VARSHARE/pkg/repositories
+	nok	72%	192.168.203.174:/
+	ok	9%	nas1:/vx/eniq-admin
+	ok	10%	nas1:/vx/eniq-backup
+	ok	14%	nas1:/vx/eniq-home
+	ok	25%	nas1:/vx/eniq-sql_anywhere
+	ok	6%	nas1:/vx/eniq-upgrade
+	ok	12%	nas2:/vx/eniq-etldata
+	ok	5%	nas2:/vx/eniq-fmdata
+	ok	4%	nas2:/vx/eniq-pmdata
+	ok	3%	nas2:/vx/eniq-reference
+	ok	2%	nas2:/vx/eniq-rejected
+	ok	27%	nas2:/vx/eniq-sybase_iq
+	ok	2%	nas3:/vx/eniq-etldata_-00
+	ok	1%	nas4:/vx/eniq-etldata_-02
+	ok	4%	nas5:/vx/eniq-archive
+	ok	6%	nas5:/vx/eniq-snapshot
+	ok	9%	nas6:/vx/eniq-log
+	ok	18%	nas6:/vx/eniq-sentinel
+	ok	20%	nas6:/vx/eniq-sw
+	ok	1%	nas7:/vx/eniq-etldata_-01
+	ok	5%	nas7:/vx/eniq-pmdata_soem
+	ok	6%	nas7:/vx/eniq-pmdata_wifi
+	ok	1%	nas8:/vx/eniq-etldata_-03
+	ok	1%	nas8:/vx/eniq-pmdata_sim
+	ok	4%	eniq_sp_1/migration_root_backup
+
+->> beadm list
+	ok	only one Boot Environment found
+
+->> svcs -a | grep -i nasd
+	ok	svc:/storage/NASd:default
+
+->> svcs -a | grep -i sentinel
+	ok	svc:/licensing/sentinel:default
+
+->> svcs -a | grep -i esm
+	ok	svc:/eniq/esm:default
+
+->> svcs -a | grep -i rmiregistry
+	ok	svc:/eniq/rmiregistry:default
+
+->> svcs -a | grep -i licmgr
+	ok	svc:/eniq/licmgr:default
+
+->> svcs -a | grep -i connectd
+	ok	svc:/eniq/connectd:default
+
+->> svcs -a | grep -i repdb
+	ok	svc:/eniq/repdb:default
+
+->> svcs -a | grep -i dwhdb
+	ok	svc:/eniq/dwhdb:default
+
+->> svcs -a | grep -i webserver
+	ok	svc:/eniq/webserver:default
+
+->> svcs -a | grep -i scheduler
+	ok	svc:/system/scheduler:default
+	ok	svc:/application/cups/scheduler:default
+	ok	svc:/eniq/scheduler:default
+
+->> svcs -a | grep -i sim
+	ok	svc:/eniq/sim:default
+
+->> svcs -a | grep -i ddc
+	ok	svc:/ericsson/eric_monitor/ddc:default
+
+->> svcs -a | grep -i roll-snap
+	ok	svc:/eniq/roll-snap:default
+
+->> svcs -a | grep -i nas
+	ok	svc:/storage/NASd:default
+	ok	svc:/milestone/NAS-online:default
+
+->> bash /eniq/bkup_sw/bin/prep_eniq_snapshots.bsh -u -N | grep 2020
+	ok	snss1 1:00-20Nov2020
+	nok	2020-11-05-15:32:49 21:32-5Nov2020
+	ok	snss1 23:03-19Nov2020
+	nok	2020-11-05-15:42:02 21:42-5Nov2020
+	ok	snss2 23:05-19Nov2020
+	ok	snss2 23:00-19Nov2020
+
+->> /usr/sbin/zpool list
+	ok	ONLINE - eniq_sp_1
+	ok	ONLINE - rpool
+	ok	ONLINE - stats_coordinator_pool
+
+->> /usr/sbin/zpool list
+	ok	20%	eniq_sp_1
+	ok	54%	rpool
+	ok	45%	stats_coordinator_pool
+
+->> /usr/sbin/zpool status | egrep 'pool:|errors'
+	ok	no errors	eniq_sp_1
+	ok	no errors	rpool
+	ok	no errors	stats_coordinator_pool
+
+<- eniq-coordinator
+
+-> eniq-engine
+
+->> df -h | awk '{print $5$1}'
+	ok	24%	rpool/ROOT/d70-backup-1
+	ok	0%	/devices
+	ok	0%	/dev
+	ok	0%	ctfs
+	ok	0%	proc
+	ok	0%	mnttab
+	ok	1%	swap
+	ok	0%	objfs
+	ok	0%	sharefs
+	ok	4%	rpool/ROOT/d70-backup-1/var
+	ok	24%	/usr/lib/libc/libc_hwcap1.so.1
+	ok	0%	fd
+	ok	1%	swap
+	ok	4%	rpool/VARSHARE
+	ok	5%	eniq_sp_1/bkup_sw
+	ok	1%	eniq_sp_1/connectd
+	ok	1%	stats_engine_pool/dwh_main
+	ok	1%	stats_engine_pool/dwh_main_dbspace
+	ok	1%	stats_engine_pool/dwh_reader
+	ok	1%	stats_engine_pool/dwh_temp_dbspace
+	ok	1%	stats_engine_pool/rep_main
+	ok	1%	stats_engine_pool/rep_temp
+	ok	1%	eniq_sp_1/installation
+	ok	3%	eniq_sp_1/local_logs
+	ok	1%	stats_engine_pool/mgdb
+	ok	1%	stats_engine_pool/misc
+	ok	1%	stats_engine_pool/opengeo_data
+	ok	1%	eniq_sp_1/smf
+	ok	1%	eniq_sp_1
+	ok	1%	stats_engine_pool
+	ok	1%	rpool
+	ok	1%	rpool/VARSHARE/zones
+	ok	1%	rpool/VARSHARE/pkg
+	ok	1%	rpool/VARSHARE/pkg/repositories
+	ok	9%	nas1:/vx/eniq-admin
+	ok	10%	nas1:/vx/eniq-backup
+	ok	14%	nas1:/vx/eniq-home
+	ok	25%	nas1:/vx/eniq-sql_anywhere
+	ok	6%	nas1:/vx/eniq-upgrade
+	ok	12%	nas2:/vx/eniq-etldata
+	ok	5%	nas2:/vx/eniq-fmdata
+	ok	4%	nas2:/vx/eniq-pmdata
+	ok	3%	nas2:/vx/eniq-reference
+	ok	2%	nas2:/vx/eniq-rejected
+	ok	27%	nas2:/vx/eniq-sybase_iq
+	ok	2%	nas3:/vx/eniq-etldata_-00
+	ok	1%	nas4:/vx/eniq-etldata_-02
+	ok	4%	nas5:/vx/eniq-archive
+	ok	6%	nas5:/vx/eniq-snapshot
+	ok	9%	nas6:/vx/eniq-log
+	ok	18%	nas6:/vx/eniq-sentinel
+	ok	20%	nas6:/vx/eniq-sw
+	ok	1%	nas7:/vx/eniq-etldata_-01
+	ok	5%	nas7:/vx/eniq-pmdata_soem
+	ok	6%	nas7:/vx/eniq-pmdata_wifi
+	ok	1%	nas8:/vx/eniq-etldata_-03
+	ok	1%	nas8:/vx/eniq-pmdata_sim
+	ok	1%	192.168.203.18:/vx/oss1a-sgwcg
+	ok	1%	192.168.203.18:/vx/oss1a-pm_storage
+	ok	28%	192.168.146.7:/vx/enm-pm1
+	ok	1%	192.168.203.18:/vx/oss1a-segment1
+	ok	35%	192.168.146.7:/vx/enm-pm2
+	ok	1%	192.168.203.18:/vx/oss1a-eba_ebsw
+	ok	23%	192.168.6.31:/vx/oss2a-sgwcg
+	ok	3%	192.168.6.31:/vx/oss2a-pm_storage
+	ok	11%	192.168.6.31:/vx/oss2a-segment1
+	ok	1%	192.168.6.31:/vx/oss2a-eba_ebsw
+	ok	1%	192.168.146.7:/vx/enm-pmlinks1/pmlinks1
+	ok	6%	192.168.203.18:/vx/oss1a-eniq_pm_vol
+	ok	4%	192.168.6.31:/vx/oss2a-eniq_pm_vol
+	ok	3%	eniq_sp_1/migration_root_backup
+
+->> beadm list
+	nok	the ZFS pool has more than one Boot Environment
+
+->> svcs -a | grep -i nasd
+	ok	svc:/storage/NASd:default
+
+->> svcs -a | grep -i esm
+	ok	svc:/eniq/esm:default
+
+->> svcs -a | grep -i rmiregistry
+	ok	svc:/eniq/rmiregistry:default
+
+->> svcs -a | grep -i connectd
+	ok	svc:/eniq/connectd:default
+
+->> svcs -a | grep -i engine
+	ok	svc:/eniq/engine:default
+
+->> svcs -a | grep -i ddc
+	ok	svc:/ericsson/eric_monitor/ddc:default
+
+->> svcs -a | grep -i roll-snap
+	ok	svc:/eniq/roll-snap:default
+
+->> grep -i parsed /eniq/log/sw_log/engine/engine-2020_11_20.log | grep oss_2
+	ok	number of parsed entries(461) for oss_2 is more than 250
+
+->> grep -i parsed /eniq/log/sw_log/engine/engine-2020_11_20.log | grep oss_3
+	ok	number of parsed entries(610) for oss_3 is more than 250
+
+->> /usr/sbin/zpool list
+	ok	ONLINE - eniq_sp_1
+	ok	ONLINE - rpool
+	ok	ONLINE - stats_engine_pool
+
+->> /usr/sbin/zpool list
+	ok	15%	eniq_sp_1
+	ok	52%	rpool
+	ok	0%	stats_engine_pool
+
+->> /usr/sbin/zpool status | egrep 'pool:|errors'
+	ok	no errors	eniq_sp_1
+	ok	no errors	rpool
+	ok	no errors	stats_engine_pool
+
+<- eniq-engine
+
+-> eniq-reader
+
+->> df -h | awk '{print $5$1}'
+	ok	24%	rpool/ROOT/d70
+	ok	0%	/devices
+	ok	0%	/dev
+	ok	0%	ctfs
+	ok	0%	proc
+	ok	0%	mnttab
+	ok	1%	swap
+	ok	0%	objfs
+	ok	0%	sharefs
+	ok	6%	rpool/ROOT/d70/var
+	ok	24%	/usr/lib/libc/libc_hwcap1.so.1
+	ok	0%	fd
+	ok	1%	swap
+	ok	1%	rpool/VARSHARE
+	ok	3%	eniq_sp_1/bkup_sw
+	ok	1%	eniq_sp_1/connectd
+	ok	1%	stats_iqr_pool/dwh_main
+	ok	1%	stats_iqr_pool/dwh_main_dbspace
+	ok	4%	stats_iqr_pool/dwh_reader
+	ok	1%	stats_iqr_pool/dwh_temp_dbspace
+	ok	1%	stats_iqr_pool/rep_main
+	ok	1%	stats_iqr_pool/rep_temp
+	ok	1%	eniq_sp_1/installation
+	ok	1%	eniq_sp_1/local_logs
+	ok	1%	stats_iqr_pool/mgdb
+	ok	1%	stats_iqr_pool/misc
+	ok	1%	stats_iqr_pool/opengeo_data
+	ok	1%	eniq_sp_1/smf
+	ok	1%	eniq_sp_1
+	ok	1%	stats_iqr_pool
+	ok	1%	rpool
+	ok	1%	rpool/VARSHARE/zones
+	ok	1%	rpool/VARSHARE/pkg
+	ok	1%	rpool/VARSHARE/pkg/repositories
+	ok	9%	nas1:/vx/eniq-admin
+	ok	10%	nas1:/vx/eniq-backup
+	ok	14%	nas1:/vx/eniq-home
+	ok	25%	nas1:/vx/eniq-sql_anywhere
+	ok	6%	nas1:/vx/eniq-upgrade
+	ok	12%	nas2:/vx/eniq-etldata
+	ok	5%	nas2:/vx/eniq-fmdata
+	ok	4%	nas2:/vx/eniq-pmdata
+	ok	3%	nas2:/vx/eniq-reference
+	ok	2%	nas2:/vx/eniq-rejected
+	ok	27%	nas2:/vx/eniq-sybase_iq
+	ok	2%	nas3:/vx/eniq-etldata_-00
+	ok	1%	nas4:/vx/eniq-etldata_-02
+	ok	4%	nas5:/vx/eniq-archive
+	ok	6%	nas5:/vx/eniq-snapshot
+	ok	9%	nas6:/vx/eniq-log
+	ok	18%	nas6:/vx/eniq-sentinel
+	ok	20%	nas6:/vx/eniq-sw
+	ok	1%	nas7:/vx/eniq-etldata_-01
+	ok	5%	nas7:/vx/eniq-pmdata_soem
+	ok	6%	nas7:/vx/eniq-pmdata_wifi
+	ok	1%	nas8:/vx/eniq-etldata_-03
+	ok	1%	nas8:/vx/eniq-pmdata_sim
+	ok	3%	eniq_sp_1/migration_root_backup
+
+->> beadm list
+	ok	only one Boot Environment found
+
+->> /usr/bin/svcs | grep eniq
+	ok	svc:/eniq/esm:default
+	ok	svc:/eniq/dwh_reader:default
+	ok	svc:/eniq/roll-snap:default
+
+->> /usr/sbin/zpool list
+	ok	ONLINE - eniq_sp_1
+	ok	ONLINE - rpool
+	ok	ONLINE - stats_iqr_pool
+
+->> /usr/sbin/zpool list
+	ok	12%	eniq_sp_1
+	ok	24%	rpool
+	ok	3%	stats_iqr_pool
+
+->> /usr/sbin/zpool status | egrep 'pool:|errors'
+	ok	no errors	eniq_sp_1
+	ok	no errors	rpool
+	ok	no errors	stats_iqr_pool
+
+<- eniq-reader
+
+-> eniq-writer
+
+->> df -h | awk '{print $5$1}'
+	ok	27%	rpool/ROOT/d70-backup-1
+	ok	0%	/devices
+	ok	0%	/dev
+	ok	0%	ctfs
+	ok	0%	proc
+	ok	0%	mnttab
+	ok	1%	swap
+	ok	0%	objfs
+	ok	0%	sharefs
+	ok	6%	rpool/ROOT/d70-backup-1/var
+	ok	27%	/usr/lib/libc/libc_hwcap1.so.1
+	ok	0%	fd
+	ok	1%	swap
+	ok	1%	rpool/VARSHARE
+	ok	3%	eniq_sp_1/bkup_sw
+	ok	1%	eniq_sp_1/connectd
+	ok	1%	stats_iqr_pool/dwh_main
+	ok	1%	stats_iqr_pool/dwh_main_dbspace
+	ok	4%	stats_iqr_pool/dwh_reader
+	ok	1%	stats_iqr_pool/dwh_temp_dbspace
+	ok	1%	stats_iqr_pool/rep_main
+	ok	1%	stats_iqr_pool/rep_temp
+	ok	1%	eniq_sp_1/installation
+	ok	2%	eniq_sp_1/local_logs
+	ok	1%	stats_iqr_pool/mgdb
+	ok	1%	stats_iqr_pool/misc
+	ok	1%	stats_iqr_pool/opengeo_data
+	ok	1%	eniq_sp_1/smf
+	ok	1%	eniq_sp_1
+	ok	1%	stats_iqr_pool
+	ok	1%	rpool
+	ok	1%	rpool/VARSHARE/zones
+	ok	1%	rpool/VARSHARE/pkg
+	ok	1%	rpool/VARSHARE/pkg/repositories
+	ok	9%	nas1:/vx/eniq-admin
+	ok	10%	nas1:/vx/eniq-backup
+	ok	14%	nas1:/vx/eniq-home
+	ok	25%	nas1:/vx/eniq-sql_anywhere
+	ok	6%	nas1:/vx/eniq-upgrade
+	ok	12%	nas2:/vx/eniq-etldata
+	ok	5%	nas2:/vx/eniq-fmdata
+	ok	4%	nas2:/vx/eniq-pmdata
+	ok	3%	nas2:/vx/eniq-reference
+	ok	2%	nas2:/vx/eniq-rejected
+	ok	27%	nas2:/vx/eniq-sybase_iq
+	ok	2%	nas3:/vx/eniq-etldata_-00
+	ok	1%	nas4:/vx/eniq-etldata_-02
+	ok	4%	nas5:/vx/eniq-archive
+	ok	6%	nas5:/vx/eniq-snapshot
+	ok	9%	nas6:/vx/eniq-log
+	ok	18%	nas6:/vx/eniq-sentinel
+	ok	20%	nas6:/vx/eniq-sw
+	ok	1%	nas7:/vx/eniq-etldata_-01
+	ok	5%	nas7:/vx/eniq-pmdata_soem
+	ok	6%	nas7:/vx/eniq-pmdata_wifi
+	ok	1%	nas8:/vx/eniq-etldata_-03
+	ok	1%	nas8:/vx/eniq-pmdata_sim
+	ok	3%	eniq_sp_1/migration_root_backup
+
+->> beadm list
+	nok	the ZFS pool has more than one Boot Environment
+
+->> /usr/bin/svcs | grep eniq
+	ok	svc:/eniq/esm:default
+	ok	svc:/eniq/dwh_reader:default
+	ok	svc:/eniq/roll-snap:default
+
+->> /usr/sbin/zpool list
+	ok	ONLINE - eniq_sp_1
+	ok	ONLINE - rpool
+	ok	ONLINE - stats_iqr_pool
+
+->> /usr/sbin/zpool list
+	ok	13%	eniq_sp_1
+	ok	24%	rpool
+	ok	4%	stats_iqr_pool
+
+->> /usr/sbin/zpool status | egrep 'pool:|errors'
+	ok	no errors	eniq_sp_1
+	ok	no errors	rpool
+	ok	no errors	stats_iqr_pool
+
+<- eniq-writer
+
+ENIQ Audit Finished
+
+
+	/// AUDIT IS FAILED ///
+
+
+

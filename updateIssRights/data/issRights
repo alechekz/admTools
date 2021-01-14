@@ -1,0 +1,98 @@
+##########################################################################################
+#	This file contains rights for ISS adjusts
+##########################################################################################
+
+
+
+
+
+#########################################################################################
+#		functions and databases															#
+#########################################################################################
+#	rights		#	for				#	dest											#
+#				#					#													#
+	r-x				funcAndData			iss												#
+#				#					#													#
+#				#					#													#
+	--x				funcAndData			iss/*											#
+#				#					#													#
+#				#					#													#
+	--x				funcAndData			iss/func/*										#
+#				#					#													#
+#				#					#													#
+	r--				funcAndData			iss/func/*/*									#
+#				#					#													#
+#				#					#													#
+	r--				funcAndData			iss/data/*										#
+#				#					#													#
+#				#					#													#
+#########################################################################################
+
+
+
+
+
+#########################################################################################
+#		autointegration scenario														#
+#########################################################################################
+#	rights		#	for				#	dest											#
+#				#					#													#
+	r-x				scenarios			iss/autoIntegration								#
+#				#					#													#
+#				#					#													#
+	--x				scenarios			iss/autoIntegration/*							#
+#				#					#													#
+#				#					#													#
+	--x				scenarios			iss/autoIntegration/*/*							#
+#				#					#													#
+#				#					#													#
+	--x				scenarios			iss/autoIntegration/hardware/retu/*				#
+#				#					#													#
+#				#					#													#
+	r--				scenarios			iss/autoIntegration/gsm/*/*						#
+#				#					#													#
+#				#					#													#
+	r--				scenarios			iss/autoIntegration/wcdma/*/*					#
+#				#					#													#
+#				#					#													#
+	r--				scenarios			iss/autoIntegration/lte/*/*						#
+#				#					#													#
+#				#					#													#
+	r--				scenarios			iss/autoIntegration/hardware/retu/*/*			#
+#				#					#													#
+#				#					#													#
+	r-x				scenarios			iss/autoIntegration/wcdma						#
+#				#					#													#
+#				#					#													#
+	r-x				scenarios			iss/autoIntegration/wcdma/regular				#
+
+#				#					#													#
+#				#					#													#
+#########################################################################################
+
+
+
+
+
+#########################################################################################
+#		logging																			#
+#########################################################################################
+#	rights		#	for				#	dest											#
+#				#					#													#
+	--x				logDir				iss/logs										#
+#				#					#													#
+#				#					#													#
+	--x				logDir				iss/logs/*										#
+#				#					#													#
+#				#					#													#
+	rwx				logDir				iss/logs/dcgk									#
+#				#					#													#
+#				#					#													#
+	-wx				logDir				iss/logs/autoIntegration/*						#
+#				#					#													#
+#				#					#													#
+	-wx				logDir				iss/logs/hardware/*								#
+#				#					#													#
+#				#					#													#
+#########################################################################################
+

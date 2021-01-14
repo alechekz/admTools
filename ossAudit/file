@@ -1,0 +1,293 @@
+	/// OSS AUDIT SUMMARY INFORMATION ///
+
+astana-oss-master:
+ok	CheckVrstDbSU - checks space usage of all versant databases
+ok	MonVrstDb - checks if the new critical alarms if versant databases appeared
+nok	MonErrLog - monitors critical events from CIF "ERROR LOG" at today
+ok	CheckSyDb - checks the remaining space for the OSS-RC Sybase databases and their transaction log
+ok	CheckMCs - checks states of Managed Componetns of OSS-RC
+ok	CheckDisks - analises the output of command vxprint and show disks failed states
+ok	CheckSyErrLog - checks sybase error log, severity level up to 16 are caused by user mistakes
+ok	ValDiagProcCache - validates daily output of crontab job for its successful completion for job containing - /ericsson/syb/conf/diag_proc_cache_test.ks
+ok	CheckCoreFiles - checks all core files, files should not exists
+ok	CheckSecurity - checks security status of COBRA and RMI/JMS
+ok	CheckVrstDataMon - checks the status of Versant database monitor
+ok	CheckVrstDb - checks mode and status of all versant databases
+ok	CheckSyLogSize - checks SMF logs size for Sybase, files have to be less than 1MB
+ok	MonNetLog - monitors critical events from "NETWORK_STATUS LOG"
+ok	CheckOutOfMem - checks all out of memory dump files, files should not exists
+ok	CheckHomeSU - checks home directory space usage
+ok	CheckDBA - runs OSS-RC's native database healthcheck
+ok	CheckVeritas - checks status of Veritas Cluster Servers
+ok	CheckMoshellLogSU - checks moshell logs directory space usage
+ok	CheckSyDump - checks for the occurrence of a Sybase Configurable Shared Memory Dump
+ok	MonConfigExports - monitors exports of configurations files in "SYSTEM EVENT LOG"
+ok	CheckOssDisksSU - checks OSS-RC general disks space usage
+ok	CheckFailProc - checks existence of failed processes
+ok	CheckWtmpx - checks a log size of all connections to the server, the log should not above 1GB, another way warn to backup and delete the contents of the file
+
+
+	/// OSS AUDIT DETAILED INFORMATION ///
+
+OSS Audit Stated:
+
+-> astana-oss-master
+
+->> /opt/ericsson/bin/smtool -l | egrep -v "started|unlicensed"
+	ok	no any failed MCs
+
+->> vxprint | egrep -i "iofail|recover"
+	ok	no any failed disks
+
+->> su - sybase -c /ericsson/syb/util/dba_tools <<EOF
+13
+
+0
+EOF
+	ok	QIO Validation
+	ok	Logs Validation
+	ok	Backup Validation
+	ok	File Validation
+	ok	Sybase Database Space Usage Validation
+	ok	Status of Sybase Databases Validation
+	ok	Recovery State Validation
+	ok	License Validation
+	ok	User Connections Validation
+	ok	User Created Cache Size Validation
+	ok	Master Database Validation
+
+->> /opt/VRTSvcs/bin/hagrp -state | grep State | grep -v ONLINE
+	ok	Oss	|OFFLINE| astadmin1bl
+	ok	Ossfs	|OFFLINE| astadmin1bl
+	ok	Sybase1	|OFFLINE| astadmin2bl
+
+->> svcs versant_log_monitor
+	ok	svc:/ericsson/eric_3pp/versant_log_monitor:default
+
+->> su - nmsadm -c /ericsson/versant/bin/vrsnt_admin.sh <<EOF
+1
+
+0
+EOF
+	ok	Multi-user, Online - DMDB
+	ok	Multi-user, Online - NADB
+	ok	Multi-user, Online - NMSNADB
+	ok	Multi-user, Online - AMDB
+	ok	Multi-user, Online - ONRM_CS
+	ok	Multi-user, Online - WRAN_SUBNETWORK_MIRROR_CS
+
+->> su - nmsadm -c /ericsson/versant/bin/vrsnt_admin.sh <<EOF
+6
+
+0
+EOF
+	ok	2%	space usage of DMDB
+	ok	1%	space usage of NADB
+	ok	1%	space usage of NMSNADB
+	ok	1%	space usage of AMDB
+	ok	11%	space usage of ONRM_CS
+	ok	28%	space usage of WRAN_SUBNETWORK_MIRROR_CS
+
+->> su - nmsadm -c /ericsson/versant/bin/vrsnt_admin.sh <<EOF
+16
+all
+CRITICAL
+q
+q
+
+0
+EOF
+	ok	no new critical alarms of versant databases found
+
+->> ls -l /var/tmp/failed_process
+	ok	no any failed process temp files
+
+->> du -sh /var/adm/wtmpx
+	ok	the log size(91M) of all server connection is less than 1GB
+
+->> du -sh /var/svc/log/ericsson-eric_3pp-sybase_[lp]*
+	ok	the size(88K) of /var/svc/log/ericsson-eric_3pp-sybase_log_monitor:default.log is less than 1MB
+	ok	the size(13K) of /var/svc/log/ericsson-eric_3pp-sybase_process_monitor:default.log is less than 1MB
+
+->> /opt/ericsson/nms_cif_sm/bin/log -type error -filter "severity_level = 3 AND time_stamp >= '2020-11-18'"
+	nok	check critical errors of CIF log
+
+		************************************************************
+		FDN : AdmHost=masterservice,ManagedComponentcdm=cdm,Processcdm_server=cdm_server
+		Add Info : 2020-11-18 11:42:23.582::::CRITICAL::::FILE_TRANSFER_ERROR::::cdmf.collector::::EAServer::::Unable to fetch the file /data_transfer/destinations/NEWCDMDEST/Ready/ROPCRFILE-0000179056 from the Network Element  SARY_B2 Reason: Low Bandwidth Use cdm_cli -action 5 for further action
+		Short Desc: File transfer error.
+		************************************************************
+		FDN : AdmHost=masterservice,ManagedComponentcdm=cdm,Processcdm_server=cdm_server
+		Add Info : 2020-11-18 10:57:01.568::::CRITICAL::::FILE_TRANSFER_ERROR::::cdmf.collector::::EAServer::::Unable to fetch the file /data_transfer/destinations/NEWCDMDEST/Ready/ROPCRFILE-0000179053 from the Network Element  SARY_B2 Reason: Low Bandwidth Use cdm_cli -action 5 for further action
+		Short Desc: File transfer error.
+		************************************************************
+		FDN : AdmHost=masterservice,ManagedComponentcdm=cdm,Processcdm_server=cdm_server
+		Add Info : 2020-11-18 09:54:01.104::::CRITICAL::::FILE_TRANSFER_ERROR::::cdmf.collector::::EAServer::::Unable to fetch the file /data_transfer/destinations/NEWCDMDEST/Ready/ROPCRFILE-0000179051 from the Network Element  SARY_B2 Reason: Low Bandwidth Use cdm_cli -action 5 for further action
+		Short Desc: File transfer error.
+		************************************************************
+		FDN : AdmHost=masterservice,ManagedComponentcdm=cdm,Processcdm_server=cdm_server
+		Add Info : 2020-11-18 08:51:01.384::::CRITICAL::::FILE_TRANSFER_ERROR::::cdmf.collector::::EAServer::::Unable to fetch the file /data_transfer/destinations/NEWCDMDEST/Ready/ROPCRFILE-0000179048 from the Network Element  SARY_B2 Reason: Low Bandwidth Use cdm_cli -action 5 for further action
+		Short Desc: File transfer error.
+		************************************************************
+		FDN : AdmHost=masterservice,ManagedComponentcdm=cdm,Processcdm_server=cdm_server
+		Add Info : 2020-11-18 07:48:07.953::::CRITICAL::::FILE_TRANSFER_ERROR::::cdmf.collector::::EAServer::::Unable to fetch the file /data_transfer/destinations/NEWCDMDEST/Ready/ROPCRFILE-0000179046 from the Network Element  SARY_B2 Reason: Low Bandwidth Use cdm_cli -action 5 for further action
+		Short Desc: File transfer error.
+		************************************************************
+		FDN : AdmHost=masterservice,ManagedComponentcdm=cdm,Processcdm_server=cdm_server
+		Add Info : 2020-11-18 06:45:01.599::::CRITICAL::::FILE_TRANSFER_ERROR::::cdmf.collector::::EAServer::::Unable to fetch the file /data_transfer/destinations/NEWCDMDEST/Ready/ROPCRFILE-0000179043 from the Network Element  SARY_B2 Reason: Low Bandwidth Use cdm_cli -action 5 for further action
+		Short Desc: File transfer error.
+		************************************************************
+		FDN : AdmHost=masterservice,ManagedComponentcdm=cdm,Processcdm_server=cdm_server
+		Add Info : 2020-11-18 05:42:01.390::::CRITICAL::::FILE_TRANSFER_ERROR::::cdmf.collector::::EAServer::::Unable to fetch the file /data_transfer/destinations/NEWCDMDEST/Ready/ROPCRFILE-0000179040 from the Network Element  SARY_B2 Reason: Low Bandwidth Use cdm_cli -action 5 for further action
+		Short Desc: File transfer error.
+		************************************************************
+		FDN : AdmHost=masterservice,ManagedComponentcdm=cdm,Processcdm_server=cdm_server
+		Add Info : 2020-11-18 04:38:59.858::::CRITICAL::::FILE_TRANSFER_ERROR::::cdmf.collector::::EAServer::::Unable to fetch the file /data_transfer/destinations/NEWCDMDEST/Ready/ROPCRFILE-0000179038 from the Network Element  SARY_B2 Reason: Low Bandwidth Use cdm_cli -action 5 for further action
+		Short Desc: File transfer error.
+		************************************************************
+		FDN : AdmHost=masterservice,ManagedComponentcdm=cdm,Processcdm_server=cdm_server
+		Add Info : 2020-11-18 03:35:59.698::::CRITICAL::::FILE_TRANSFER_ERROR::::cdmf.collector::::EAServer::::Unable to fetch the file /data_transfer/destinations/NEWCDMDEST/Ready/ROPCRFILE-0000179035 from the Network Element  SARY_B2 Reason: Low Bandwidth Use cdm_cli -action 5 for further action
+		Short Desc: File transfer error.
+		************************************************************
+		FDN : AdmHost=masterservice,ManagedComponentcdm=cdm,Processcdm_server=cdm_server
+		Add Info : 2020-11-18 02:31:59.865::::CRITICAL::::FILE_TRANSFER_ERROR::::cdmf.collector::::EAServer::::Unable to fetch the file /data_transfer/destinations/NEWCDMDEST/Ready/ROPCRFILE-0000179032 from the Network Element  SARY_B2 Reason: Low Bandwidth Use cdm_cli -action 5 for further action
+		Short Desc: File transfer error.
+		************************************************************
+		FDN : AdmHost=masterservice,ManagedComponentcdm=cdm,Processcdm_server=cdm_server
+		Add Info : 2020-11-18 01:27:59.712::::CRITICAL::::FILE_TRANSFER_ERROR::::cdmf.collector::::EAServer::::Unable to fetch the file /data_transfer/destinations/NEWCDMDEST/Ready/ROPCRFILE-0000179030 from the Network Element  SARY_B2 Reason: Low Bandwidth Use cdm_cli -action 5 for further action
+		Short Desc: File transfer error.
+		************************************************************
+		FDN : AdmHost=masterservice,ManagedComponentcdm=cdm,Processcdm_server=cdm_server
+		Add Info : 2020-11-18 00:04:58.917::::CRITICAL::::FILE_TRANSFER_ERROR::::cdmf.collector::::EAServer::::Unable to fetch the file /data_transfer/destinations/NEWCDMDEST/Ready/ROPCRFILE-0000179023 from the Network Element  SARY_B2 Reason: Low Bandwidth Use cdm_cli -action 5 for further action
+		Short Desc: File transfer error.
+
+->> /opt/ericsson/nms_cif_sm/bin/log -type security -filter "severity_level = 3 AND time_stamp >= '2020-11-18'"
+	ok	there is no critical security events in CIF log at today
+
+->> ls -erth /var/share/cores
+	ok	no any core files
+
+->> ls -erth /ossrc/upgrade/*/*
+	ok	no any out of memory dump files
+
+->> /opt/ericsson/secpf/scripts/bin/security.ksh -status
+	ok	security status
+
+->> grep error /var/opt/sybase/sybase/log/masterdataservice.ERRORLOG | grep 2020/11/18
+	ok	no errors in sybase errorlog
+
+->> su - sybase -c /ericsson/syb/conf/csmd_check
+	ok	no any Sybase Configurable Shared Memory Dump
+
+->> tail -4 /ericsson/syb/log/diag_proc_cache_test.txt
+	ok	validation of Diagnostics Total Procedure Cache
+
+->> su - sybase -c /ericsson/syb/util/db_check.sh | egrep ' system'
+	ok	6%	ActivitySupportDatabase
+	ok	13%	activitidb
+	ok	14%	adb
+	ok	54%	admindb
+	ok	1%	ahwdb
+	ok	2%	audb
+	ok	0%	brfdb
+	ok	24%	bsmdb
+	ok	13%	cdmdb
+	ok	2%	cexdb
+	ok	57%	cnadb
+	ok	0%	comnsd
+	ok	2%	emsdb
+	ok	0%	epcnsddb
+	ok	9%	epcpcpbdb
+	ok	0%	ffaxblrdb
+	ok	2%	fmadb_1_1
+	ok	11%	imhdb
+	ok	17%	imocdb
+	ok	1%	irathomauditdb
+	ok	21%	irathomdb
+	ok	73%	lvlogdb
+	ok	8%	master
+	ok	57%	model
+	ok	3%	nsddb
+	ok	1%	pdmdb
+	ok	0%	pmcsdb
+	ok	6%	pmrdb
+	ok	0%	pms
+	ok	1%	rndbidb
+	ok	0%	rnxdb
+	ok	5%	rrpmdb
+	ok	0%	scsdb
+	ok	0%	shmdb
+	ok	3%	smiadb
+	ok	74%	smlogdb
+	ok	2%	smoaxedb
+	ok	1%	smocellodb
+	ok	5%	smodb
+	ok	3%	smogsndb
+	ok	3%	smoisdb
+	ok	2%	smoj20db
+	ok	3%	smorbsdb
+	ok	36%	sybmgmtdb
+	ok	2%	sybsystemdb
+	ok	52%	sybsystemprocs
+	ok	1%	tapdb
+	ok	1%	telisdb
+	ok	0%	tempdb
+	ok	0%	tempdb_fm
+	ok	12%	tempdb_sa
+	ok	5%	topdb
+	ok	2%	usgroupingdb
+	ok	1%	usprofilesdb
+	ok	1%	usrulesdb
+	ok	2%	usschedulingdb
+	ok	2%	ustemplatesdb
+	ok	18%	vbExtNameService
+	ok	24%	vbGUIBoundNameService
+	ok	38%	vbNameService
+	ok	18%	vbSouthBoundNameService
+	ok	0%	wccdb
+
+->> /opt/ericsson/nms_cif_sm/bin/log -type system -filter "event_type LIKE 'COM.ERICSSON.NMS.CIF.AM.NEW_JOB' AND time_stamp >= '2020-11-18'" | grep Owner
+	ok	6	jobs run by pquuser
+	ok	2	jobs run by anpusr
+	ok	229	jobs run by daikud
+	ok	5	jobs run by aleche
+
+->> df -lh | egrep '^/dev/vx/dsk' | awk '{print $5$6}'
+	ok	11%	/ossrc/versant
+	ok	27%	/export
+	ok	1%	/ossrc/upgrade
+	ok	92%	/ossrc/3pp
+	ok	45%	/var/opt/ericsson
+
+->> du -sh /home/*
+	ok	1G		/home/aleche
+	ok	1G		/home/alymus
+	ok	1G		/home/duldan
+	ok	1G		/home/eabiyel
+	ok	3G		/home/echenko
+	ok	2G		/home/ecranra
+	ok	1G		/home/emadish
+	ok	1G		/home/emaroal
+	ok	1G		/home/emikzar
+	ok	3G		/home/enikvaz
+	ok	1G		/home/eravsna
+	ok	2G		/home/ericsson
+	ok	1G		/home/l_adlkam
+	ok	2G		/home/nmsadm
+	ok	1G		/home/osmmam
+	ok	1G		/home/vlakri
+	ok	2G		/home/yevass
+	ok	there is no big directories found
+
+->> du -sh /var/opt/ericsson/amos/moshell_logfiles/*
+	ok	there is no big directories found
+
+<- astana-oss-master
+
+OSS Audit Finished
+
+
+	/// AUDIT IS FAILED ///
+
+
+

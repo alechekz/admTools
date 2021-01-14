@@ -1,0 +1,23 @@
+	/// OSS AUDIT SUMMARY INFORMATION ///
+
+astana-oss-master:
+	ok	CheckMCs
+	ok	CheckDisks
+
+
+	 OSS AUDIT DETAILED INFORMATION ///
+
+OSS Audit Stated:
+
+-> astana-oss-master
+
+->> /opt/ericsson/bin/smtool -l | egrep -v "started|unlicensed"
+	ok	no any failed MCs
+
+->> vxprint | egrep -i "iofail|recover"
+	ok	no any failed disks
+
+<- astana-oss-master
+
+OSS Audit Finished
+
